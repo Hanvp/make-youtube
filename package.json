@@ -8,8 +8,10 @@
   },
   "scripts": {
     "dev:server": "nodemon",
-    "dev:assets": "webpack",
+    "build" :"npm run build:server && build:assets",
+    "dev:assets": "webpack --mode=development -w",
     "build:server": "babel src -d build",
+    "build:assets":"webpack --mode=production",
     "start": "node build/init.js"
   },
   "author": "Han",
